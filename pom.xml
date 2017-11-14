@@ -13,6 +13,7 @@
 	<properties>
 		<log4j2.version>2.9.0</log4j2.version>
 		<canal.version>1.0.24</canal.version>
+		<project.build.source_target.version>1.8</project.build.source_target.version>
 		<project.build.source_target.encoding>UTF-8</project.build.source_target.encoding>
 	</properties>
 	<licenses>
@@ -23,8 +24,8 @@
 	</licenses>
 	<scm>
 		<url>https://github.com/dev-share/css-canal</url>
-		<connection>git@github.com:dev-share/css-canal.git</connection>
-		<developerConnection>https://github.com/dev-share/css-canal</developerConnection>
+		<connection>scm:git:git@github.com:dev-share/css-canal.git</connection>
+		<developerConnection>scm:git:git@github.com:dev-share/css-canal.git</developerConnection>
 	</scm>
 	<developers>
 		<developer>
@@ -70,8 +71,8 @@
 						<artifactId>maven-compiler-plugin</artifactId>
 						<version>3.7.0</version>
 						<configuration>
-							<source>${project.build.source_target.encoding}</source>
-							<target>${project.build.source_target.encoding}</target>
+							<source>${project.build.source_target.version}</source>
+							<target>${project.build.source_target.version}</target>
 						</configuration>
 					</plugin>
 					<plugin>
