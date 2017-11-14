@@ -10,3 +10,4 @@
     <version>1.0.24</version>
 </dependency>
 ```
+[maven仓库](https://oss.sonatype.org/content/repositories/releases/com/ucloudlink/css/css-canal/)
