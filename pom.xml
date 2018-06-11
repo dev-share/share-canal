@@ -2,19 +2,24 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ucloudlink.css</groupId>
 	<artifactId>css-canal</artifactId>
-	<version>1.0.24</version>
+	<version>1.0.25</version>
 	<name>css-canal</name>
 	<description>css-canal</description>
-	<parent>
+	<!-- <parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
 		<version>9</version>
-	</parent>
+	</parent> -->
 	<properties>
-		<log4j2.version>2.9.0</log4j2.version>
-		<canal.version>1.0.24</canal.version>
-		<project.build.source_target.version>1.8</project.build.source_target.version>
-		<project.build.source_target.encoding>UTF-8</project.build.source_target.encoding>
+		<java.version>1.8</java.version>
+		<java.encoding>UTF-8</java.encoding>
+		<log4j2.version>2.9.1</log4j2.version>
+		<logback.version>1.2.3</logback.version>
+		<canal.version>1.0.25</canal.version>
+		<druid.version>1.1.10</druid.version>
+		<fastjson.version>1.2.47</fastjson.version>
+		<httpclient.version>4.5.5</httpclient.version>
+		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 	</properties>
 	<licenses>
 		<license>
@@ -29,7 +34,7 @@
 	</scm>
 	<developers>
 		<developer>
-			<name>ukelink</name>
+			<name>Kervin</name>
 			<email>yi.zhang@ucloudlink.com</email>
 			<url>https://github.com/dev-share/css-canal</url>
 		</developer>
@@ -41,15 +46,19 @@
 			<version>${log4j2.version}</version>
 		</dependency>
 		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>${logback.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.5.3</version>
+			<version>${httpclient.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.40</version>
+			<version>${fastjson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba.otter</groupId>
@@ -62,17 +71,18 @@
 			<version>${canal.version}</version>
 		</dependency>
 	</dependencies>
-	<profiles>
+	<!-- <profiles>
 		<profile>
-			<id>sonatype-oss-release</id>
+			<id>sonatype-oss-release</id> -->
 			<build>
 				<plugins>
 					<plugin>
 						<artifactId>maven-compiler-plugin</artifactId>
 						<version>3.7.0</version>
 						<configuration>
-							<source>${project.build.source_target.version}</source>
-							<target>${project.build.source_target.version}</target>
+							<source>${java.version}</source>
+							<target>${java.version}</target>
+							<encoding>${java.encoding}</encoding>
 						</configuration>
 					</plugin>
 					<plugin>
@@ -98,11 +108,16 @@
 								<manifestEntries>
 									<Change>${maven.build.timestamp}</Change>
 									<Built-Date>${maven.build.timestamp}</Built-Date>
+									<Canal-Version>${canal.version}</Canal-Version>
 								</manifestEntries>
 							</archive>
+							<excludes>
+								<exclude>canal.properties</exclude>
+								<exclude>log4j2.properties</exclude>
+							</excludes>
 						</configuration>
 					</plugin>
-					<plugin>
+					<!-- <plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
 						<version>1.6</version>
@@ -114,7 +129,7 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>
+					</plugin> -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-shade-plugin</artifactId>
@@ -148,41 +163,43 @@
 							<relocations>
 								<relocation>
 									<pattern>org.apache.logging.log4j</pattern>
-									<shadedPattern>com.alibaba.otter.canal.log4j</shadedPattern>
+									<shadedPattern>com.apache.logging.log4j</shadedPattern>
+								</relocation>
+								<relocation>
+									<pattern>com.fasterxml.jackson</pattern>
+									<shadedPattern>org.fasterxml.jackson</shadedPattern>
 								</relocation>
 								<relocation>
 									<pattern>io.netty</pattern>
-									<shadedPattern>com.alibaba.otter.canal.io.netty</shadedPattern>
+									<shadedPattern>com.io.netty</shadedPattern>
 								</relocation>
 								<relocation>
 									<pattern>org.jboss.netty</pattern>
-									<shadedPattern>com.alibaba.otter.canal.jboss.netty</shadedPattern>
+									<shadedPattern>com.jboss.netty</shadedPattern>
 								</relocation>
 								<relocation>
 									<pattern>com.google</pattern>
-									<shadedPattern>com.alibaba.otter.canal.guava</shadedPattern>
+									<shadedPattern>com.google.guava</shadedPattern>
 								</relocation>
 								<relocation>
 									<pattern>com.alibaba.fastjson</pattern>
-									<shadedPattern>com.alibaba.otter.canal.fastjson</shadedPattern>
+									<shadedPattern>org.alibaba.fastjson</shadedPattern>
 								</relocation>
 							</relocations>
 							<transformers>
-								<transformer
-									implementation="com.github.edwgiz.mavenShadePlugin.log4j2CacheTransformer.PluginsCacheFileTransformer">
-								</transformer>
+								<transformer implementation="com.github.edwgiz.mavenShadePlugin.log4j2CacheTransformer.PluginsCacheFileTransformer"/>
 							</transformers>
 						</configuration>
 					</plugin>
 				</plugins>
 			</build>
-		</profile>
-	</profiles>
+		<!-- </profile>
+	</profiles> -->
 	<distributionManagement>
 		<repository>
 			<id>Sonatype</id>
-			<!-- <url>https://oss.sonatype.org/content/repositories/releases/</url> -->
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+			<!-- <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> -->
 		</repository>
 		<snapshotRepository>
 			<id>Sonatype</id>

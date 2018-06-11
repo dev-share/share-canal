@@ -19,11 +19,12 @@ import com.alibaba.otter.canal.protocol.CanalEntry.RowData;
 import com.alibaba.otter.canal.protocol.Message;
 import com.ucloudlink.css.util.DateUtil;
 /**
- * @decription Canal服务(MySQL数据库监控)
+ * <pre>
+ * 描述:  Canal服务(MySQL数据库监控)
  * @author yi.zhang
- * @time 2017年6月1日 上午10:09:03
+ * 时间:  2017年6月1日 上午10:09:03
  * @since 1.0
- * @jdk 1.8
+ * </pre>
  */
 public class CanalFactory {
 	private static Logger logger = LogManager.getLogger(CanalFactory.class);
@@ -133,10 +134,9 @@ public class CanalFactory {
 		this.batch_size = batch_size;
 	}
 	/**
-	 * @description Canal服务配置
+	 * 描述:  Canal服务配置
 	 * @author yi.zhang
-	 * @time 2017年4月19日 上午10:38:42
-	 * @throws Exception
+	 * 时间:  2017年4月19日 上午10:38:42
 	 */
 	public void init(){
 		try {
@@ -172,23 +172,23 @@ public class CanalFactory {
 	}
 	/**
 	 * 提交数据
-	 * @param batchId
+	 * @param batchId 批量ID
 	 */
 	public static void ack(long batchId){
 		connector.ack(batchId);
 	}
 	/**
 	 * 回滚数据
-	 * @param batchId
+	 * @param batchId 批量ID
 	 */
 	public static void rollback(long batchId){
 		connector.rollback(batchId);
 	}
 	/**
-	 * @decription 监控数据
+	 * 描述:  监控数据
 	 * @author yi.zhang
-	 * @time 2017年6月1日 上午10:10:52
-	 * @return
+	 * 时间:  2017年6月1日 上午10:10:52
+	 * @return 返回监控数据
 	 */
 	public List<MonitorInfo> execute(){
 		try {

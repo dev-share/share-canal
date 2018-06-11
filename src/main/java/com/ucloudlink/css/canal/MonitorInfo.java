@@ -6,11 +6,10 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 /**
- * @decription 监控数据
+ * 描述:  监控数据
  * @author yi.zhang
- * @time 2017年6月1日 上午10:13:38
+ * 时间:  2017年6月1日 上午10:13:38
  * @since 1.0
- * @jdk 1.8
  */
 @SuppressWarnings("serial")
 public class MonitorInfo implements Serializable{
