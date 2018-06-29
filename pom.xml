@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ucloudlink.css</groupId>
-	<artifactId>css-canal</artifactId>
+	<groupId>com.devzy.share</groupId>
+	<artifactId>share-canal</artifactId>
 	<version>1.0.25</version>
-	<name>css-canal</name>
-	<description>css-canal</description>
+	<name>share-canal</name>
+	<description>share-canal</description>
 	<!-- <parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
@@ -28,15 +28,15 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://github.com/dev-share/css-canal</url>
-		<connection>scm:git:git@github.com:dev-share/css-canal.git</connection>
-		<developerConnection>scm:git:git@github.com:dev-share/css-canal.git</developerConnection>
+		<url>https://github.com/dev-share/share-canal</url>
+		<connection>scm:git:git@github.com:dev-share/share-canal.git</connection>
+		<developerConnection>scm:git:git@github.com:dev-share/share-canal.git</developerConnection>
 	</scm>
 	<developers>
 		<developer>
 			<name>Kervin</name>
 			<email>yi.zhang@ucloudlink.com</email>
-			<url>https://github.com/dev-share/css-canal</url>
+			<url>https://github.com/dev-share/share-canal</url>
 		</developer>
 	</developers>
 	<dependencies>

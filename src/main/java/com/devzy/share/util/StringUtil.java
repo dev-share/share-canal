@@ -1,4 +1,4 @@
-package com.ucloudlink.css.util;
+package com.devzy.share.util;
 
 public class StringUtil {
 	public static boolean isEmpty(String target){

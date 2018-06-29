@@ -1,4 +1,4 @@
-package com.ucloudlink.css.common;
+package com.devzy.share.common;
 
 import java.io.IOException;
 import java.io.InputStream;

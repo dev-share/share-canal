@@ -1,4 +1,4 @@
-package com.ucloudlink.css.canal;
+package com.devzy.share.canal;
 
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -20,7 +20,7 @@ import com.alibaba.otter.canal.protocol.CanalEntry.EventType;
 import com.alibaba.otter.canal.protocol.CanalEntry.RowChange;
 import com.alibaba.otter.canal.protocol.CanalEntry.RowData;
 import com.alibaba.otter.canal.protocol.Message;
-import com.ucloudlink.css.util.DateUtil;
+import com.devzy.share.util.DateUtil;
 /**
  * 描述:  Canal服务(MySQL数据库监控)
  * @author yi.zhang

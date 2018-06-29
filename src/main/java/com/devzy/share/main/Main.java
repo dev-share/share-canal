@@ -1,4 +1,4 @@
-package com.ucloudlink.css.main;
+package com.devzy.share.main;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -9,11 +9,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.alibaba.fastjson.JSON;
-import com.ucloudlink.css.canal.CanalFactory;
-import com.ucloudlink.css.canal.MonitorInfo;
-import com.ucloudlink.css.canal.MutiCanalFactory;
-import com.ucloudlink.css.common.BaseUtil;
-import com.ucloudlink.css.util.NumberUtil;
+import com.devzy.share.canal.CanalFactory;
+import com.devzy.share.canal.MonitorInfo;
+import com.devzy.share.canal.MutiCanalFactory;
+import com.devzy.share.common.BaseUtil;
+import com.devzy.share.util.NumberUtil;
 
 public class Main {
 	private static Logger logger = LogManager.getLogger();

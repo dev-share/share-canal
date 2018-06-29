@@ -1,8 +1,8 @@
-package com.ucloudlink.css.common;
+package com.devzy.share.common;
 
-import com.ucloudlink.css.canal.CanalFactory;
-import com.ucloudlink.css.canal.MutiCanalFactory;
-import com.ucloudlink.css.util.StringUtil;
+import com.devzy.share.canal.CanalFactory;
+import com.devzy.share.canal.MutiCanalFactory;
+import com.devzy.share.util.StringUtil;
 ///**
 // * @decription 配置文件获取数据源工厂
 // * @author yi.zhang

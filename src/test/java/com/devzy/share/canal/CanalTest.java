@@ -1,4 +1,4 @@
-package com.ucloudlink.css.canal;
+package com.devzy.share.canal;
 
 public class CanalTest {
 
